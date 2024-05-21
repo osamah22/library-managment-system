@@ -31,7 +31,6 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     nextDestination: NavDestination
 ) {
-    
     val states = listOf("Wants to read", "Reading", "Read")
     var stateNumber = 1
     // 2. LazyColumn Setup
@@ -63,59 +62,3 @@ fun ShowShelve(stateName: String, stateNumber : Int, foe: () -> Unit = {}, bVM: 
         Text(text = "show")
     }
 }
-
-/*
-@Composable
-private fun InventoryList(
-    itemList: List<Item>,
-    onItemClick: (Item) -> Unit,
-    contentPadding: PaddingValues,
-    modifier: Modifier = Modifier
-) {
-    LazyColumn(
-        modifier = modifier,
-        contentPadding = contentPadding
-    ) {
-        items(items = itemList, key = { it.id }) { item ->
-            InventoryItem(item = item,
-                modifier = Modifier
-                    .padding(dimensionResource(id = R.dimen.padding_small))
-                    .clickable { onItemClick(item) })
-        }
-    }
-}
-*/
-/*
-@Composable
-private fun InventoryItem(
-    item: Item, modifier: Modifier = Modifier
-) {
-    Card(
-        modifier = modifier,
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-    ) {
-        Column(
-            modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large)),
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small))
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    text = item.name,
-                    style = MaterialTheme.typography.titleLarge,
-                )
-                Spacer(Modifier.weight(1f))
-                Text(
-                    text = item.formatedPrice(),
-                    style = MaterialTheme.typography.titleMedium
-                )
-            }
-            Text(
-                text = stringResource(R.string.in_stock, item.quantity),
-                style = MaterialTheme.typography.titleMedium
-            )
-        }
-    }
-}
-*/
